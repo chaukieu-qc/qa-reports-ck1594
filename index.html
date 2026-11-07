@@ -1,1 +1,72 @@
-<p>Chưa có báo cáo.</p>
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Báo cáo TVOD Android</title>
+<style>
+:root{--bg:#f6f6f3;--surface:#fcfcfb;--ink:#0b0b0b;--muted:#6b6a63;--line:#e1e0d9;--pass:#0ca30c;--fail:#d03b3b;--skip:#fab219;--passtext:#006300;--failtext:#b02a2a;--skiptext:#7a5600}
+@media (prefers-color-scheme:dark){:root{--bg:#111110;--surface:#1a1a19;--ink:#f2f2ef;--muted:#a3a29a;--line:#2c2c2a;--passtext:#0ca30c;--failtext:#ee6b6b;--skiptext:#fab219}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:24px 16px 48px}
+header{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:flex-start;margin-bottom:20px}
+h1{font-size:24px;margin:0}h2{font-size:16px;margin:0 0 12px}
+.meta{color:var(--muted);font-size:13px;margin-top:4px}
+.verdict{font-weight:700;padding:6px 14px;border-radius:999px;font-size:14px;border:1px solid var(--line);background:var(--surface);color:var(--failtext)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:16px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:16px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.kpi b{display:block;font-size:30px;line-height:1.1}.kpi span{color:var(--muted);font-size:13px}
+.kpi.rate b{color:var(--failtext)}
+.stack{display:flex;gap:2px;height:22px;border-radius:6px;overflow:hidden}
+.seg.pass,.bar i.pass{background:var(--pass)}.seg.fail,.bar i.fail{background:var(--fail)}.seg.skip,.bar i.skip{background:var(--skip)}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:10px;font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px}
+.grid2{display:grid;grid-template-columns:2fr 1fr;gap:16px}@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}.muted{color:var(--muted);font-size:13px}
+.barcell{width:34%}.bar{display:flex;gap:2px;height:10px;background:var(--line);border-radius:5px;overflow:hidden}.bar i{display:block}
+ul.kinds{list-style:none;margin:0;padding:0}ul.kinds li{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line)}
+.badge{font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.badge.pass{color:var(--passtext);background:color-mix(in srgb,var(--pass) 15%,transparent)}
+.badge.fail{color:var(--failtext);background:color-mix(in srgb,var(--fail) 15%,transparent)}
+.badge.skip{color:var(--skiptext);background:color-mix(in srgb,var(--skip) 20%,transparent)}
+.filters{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.filters button{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:6px 14px;border-radius:999px;cursor:pointer;font:inherit;font-size:13px}
+.filters button.on{background:var(--ink);color:var(--surface)}
+.btn{display:inline-block;margin-top:4px;padding:8px 16px;border-radius:8px;background:var(--ink);color:var(--surface);text-decoration:none;font-size:14px}
+.scroll{overflow-x:auto}
+</style></head><body><div class="wrap">
+<header><div><h1>TVOD Android</h1>
+<div class="meta">Build 3.11.15 · Staging · Android · Thiết bị R5CRA1X1C5A<br>
+Hoàn tất 07/11/2026 21:42 · Thời gian chạy 15.2 phút</div></div>
+<div class="verdict">✖ CÓ TEST FAIL</div></header>
+
+<div class="kpis">
+<div class="kpi"><b>4</b><span>Tổng số test</span></div>
+<div class="kpi"><b style="color:var(--passtext)">0</b><span>✔ Pass</span></div>
+<div class="kpi"><b style="color:var(--failtext)">4</b><span>✖ Fail</span></div>
+<div class="kpi"><b style="color:var(--skiptext)">0</b><span>⏭ Skip</span></div>
+<div class="kpi rate"><b>0%</b><span>Tỷ lệ pass (không tính skip)</span></div></div>
+
+<div class="card"><h2>Phân bố kết quả</h2><div class="stack"><div class="seg fail" style="flex:4" title="Fail: 4 (100.0%)"></div></div>
+<div class="legend"><span><i style="background:var(--pass)"></i>Pass 0 (0.0%)</span>
+<span><i style="background:var(--fail)"></i>Fail 4 (100.0%)</span>
+<span><i style="background:var(--skip)"></i>Skip 0 (0.0%)</span></div></div>
+
+<div class="grid2"><div class="card"><h2>Kết quả theo bộ test</h2><div class="scroll"><table>
+<tr><th>Bộ</th><th class="num">Pass</th><th class="num">Tỷ lệ</th><th>Phân bố</th></tr><tr><td><b>TVOD</b><div class="muted">4 Cần kiểm tra</div></td>
+          <td class="num">0/4</td><td class="num"><b>0%</b></td>
+          <td class="barcell"><div class="bar"><i class="pass" style="width:0.0%"></i><i class="fail" style="width:100.0%"></i><i class="skip" style="width:0.0%"></i></div></td></tr></table></div></div>
+<div><div class="card"><h2>Phân loại lỗi</h2><ul class="kinds"><li><span>Cần kiểm tra</span><b>4</b></li></ul></div><div class="card"><h2>So với lần chạy trước</h2><p><b>0</b> test fail mới · <b>0</b> test đã hết lỗi</p></div></div></div>
+
+<div class="card"><h2>Chi tiết từng test</h2>
+<div class="filters" id="f"><button class="on" data-s="all">Tất cả (4)</button><button data-s="fail">Fail (4)</button>
+<button data-s="pass">Pass (0)</button><button data-s="skip">Skip (0)</button></div>
+<div class="scroll"><table id="t"><tr><th>Kết quả</th><th>Test</th><th>Bộ</th><th class="num">Thời gian</th><th>Loại lỗi</th><th>Lý do</th></tr><tr data-status="fail"><td><span class="badge fail">✖ Fail</span></td><td>test_upsell_tvod_16</td><td>TVOD</td><td class="num">227s</td><td>Cần kiểm tra</td><td class="muted">Không tìm thấy element &#x27;text.ban_da_co_goi_2&#x27; bằng bất kỳ locator</td></tr><tr data-status="fail"><td><span class="badge fail">✖ Fail</span></td><td>test_upsell_tvod_17</td><td>TVOD</td><td class="num">228s</td><td>Cần kiểm tra</td><td class="muted">Không tìm thấy element &#x27;text.ban_da_co_goi_2&#x27; bằng bất kỳ locator</td></tr><tr data-status="fail"><td><span class="badge fail">✖ Fail</span></td><td>test_upsell_tvod_18</td><td>TVOD</td><td class="num">231s</td><td>Cần kiểm tra</td><td class="muted">Không tìm thấy element &#x27;text.ban_da_thue_phim&#x27; bằng bất kỳ locator</td></tr><tr data-status="fail"><td><span class="badge fail">✖ Fail</span></td><td>test_upsell_tvod_19</td><td>TVOD</td><td class="num">226s</td><td>Cần kiểm tra</td><td class="muted">Không tìm thấy element &#x27;text.ban_da_thue_phim&#x27; bằng bất kỳ locator</td></tr></table></div>
+</div>
+</div>
+<script>
+document.querySelectorAll('#f button').forEach(b=>b.onclick=()=>{
+ document.querySelectorAll('#f button').forEach(x=>x.classList.toggle('on',x===b));
+ document.querySelectorAll('#t tr[data-status]').forEach(r=>r.style.display=(b.dataset.s==='all'||r.dataset.status===b.dataset.s)?'':'none');
+});
+</script></body></html>

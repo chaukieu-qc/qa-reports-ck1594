@@ -12,13 +12,13 @@ table{border-collapse:collapse;width:100%}th,td{border:1px solid var(--line);pad
 img{max-width:100%;border:1px solid var(--line);margin-top:8px}code{word-break:break-all}
 </style></head><body>
 <h1>Hồi quy Đăng ký/Đăng nhập Web</h1>
-<p class="mut">Galaxy Play Web (sandbox) · Chromium Desktop · Playwright 1.65.1 · 08:36:19 27/11/2026</p>
+<p class="mut">Galaxy Play Web (sandbox) · Chromium Desktop · Playwright 1.65.1 · 11:17:18 28/11/2026</p>
 <div class="kpi">
-<div><b class="ok">22</b>Qua</div><div><b class="bad">30</b>Đỏ</div>
+<div><b class="ok">33</b>Qua</div><div><b class="bad">19</b>Đỏ</div>
 <div><b>1</b>Bỏ qua</div><div><b>0</b>Chưa làm</div></div>
 <h2>Theo nhóm</h2>
-<table><tr><td>Entry point</td><td>1/4</td><td>3 case fail</td></tr><tr><td>Quên mật khẩu</td><td>4/11</td><td>7 case fail</td></tr><tr><td>Galaxy Kids</td><td>2/6</td><td>4 case fail</td></tr><tr><td>Đăng nhập</td><td>3/5</td><td>2 case fail</td></tr><tr><td>Thanh toán</td><td>5/16</td><td>10 case fail</td></tr><tr><td>Đăng ký</td><td>7/11</td><td>4 case fail</td></tr></table>
-<h2>Case đỏ (30) – web khác test case</h2>
+<table><tr><td>Entry point</td><td>2/4</td><td>2 case fail</td></tr><tr><td>Quên mật khẩu</td><td>7/11</td><td>4 case fail</td></tr><tr><td>Galaxy Kids</td><td>2/6</td><td>4 case fail</td></tr><tr><td>Đăng nhập</td><td>4/5</td><td>1 case fail</td></tr><tr><td>Thanh toán</td><td>11/16</td><td>4 case fail</td></tr><tr><td>Đăng ký</td><td>7/11</td><td>4 case fail</td></tr></table>
+<h2>Case đỏ (19) – web khác test case</h2>
 
 <details class="case">
   <summary><b>ONBOARD-ENTRY-01</b> – nút Thêm vào danh sách tại Spotlight dẫn vào luồng đăng nhập</summary>
@@ -43,34 +43,12 @@ img{max-width:100%;border:1px solid var(--line);margin-top:8px}code{word-break:b
 </details>
 
 <details class="case">
-  <summary><b>ONBOARD-ENTRY-04</b> – đăng ký từ Start Screen không thuộc ngữ cảnh thanh toán thì về thẳng Start Screen</summary>
-  <table>
-    <tr><th>Step</th><td>Step 4: Hoàn tất đăng ký + xác thực Email (hoặc bấm 'Để sau')</td></tr>
-    <tr><th>Expected</th><td>/\/(browse|new-home)?(\?.*)?$/</td></tr>
-    <tr><th>Actual</th><td>&quot;https://web-sand.glxplay.io/lobby&quot;</td></tr>
-    
-  </table>
-  <a href="shots/ONBOARD-ENTRY-04.png"><img src="shots/ONBOARD-ENTRY-04.png" alt="Ảnh lỗi ONBOARD-ENTRY-04" loading="lazy"></a>
-</details>
-
-<details class="case">
-  <summary><b>ONBOARD-FORGOT-01</b> – chặn luồng Quên mật khẩu khi SĐT chưa có tài khoản</summary>
-  <table>
-    <tr><th>Step</th><td>Step 5: Nhấn 'Tiếp tục'</td></tr>
-    <tr><th>Expected</th><td>hiển thị &quot;Tài khoản không tồn tại. Vui lòng đăng ký tài khoản.&quot;</td></tr>
-    <tr><th>Actual</th><td>(không tìm thấy phần tử)</td></tr>
-    <tr><th>Locator</th><td><code>getByText('Tài khoản không tồn tại. Vui lòng đăng ký tài khoản.', { exact: true })</code></td></tr>
-  </table>
-  <a href="shots/ONBOARD-FORGOT-01.png"><img src="shots/ONBOARD-FORGOT-01.png" alt="Ảnh lỗi ONBOARD-FORGOT-01" loading="lazy"></a>
-</details>
-
-<details class="case">
   <summary><b>ONBOARD-FORGOT-10</b> – không tự chuyển sang SMS OTP khi Email OTP đạt giới hạn</summary>
   <table>
     <tr><th>Step</th><td>Step 1: Tại màn hình Xác thực tài khoản (EmailOTP) đã đạt giới hạn sai 5 lần, quan sát màn hình hiện tại</td></tr>
-    <tr><th>Expected</th><td>hiển thị &quot;Mã OTP này đã vô hiệu hóa, vui lòng nhấn Gửi lại để nhận mã mới.&quot;</td></tr>
-    <tr><th>Actual</th><td>(không tìm thấy phần tử)</td></tr>
-    <tr><th>Locator</th><td><code>getByText('Mã OTP này đã vô hiệu hóa, vui lòng nhấn Gửi lại để nhận mã mới.', { exact: true })</code></td></tr>
+    <tr><th>Expected</th><td></td></tr>
+    <tr><th>Actual</th><td></td></tr>
+    
   </table>
   <a href="shots/ONBOARD-FORGOT-10.png"><img src="shots/ONBOARD-FORGOT-10.png" alt="Ảnh lỗi ONBOARD-FORGOT-10" loading="lazy"></a>
 </details>
@@ -84,28 +62,6 @@ img{max-width:100%;border:1px solid var(--line);margin-top:8px}code{word-break:b
     <tr><th>Locator</th><td><code>getByText(/^Xác thực (smsOTP|tài khoản)$/i)</code></td></tr>
   </table>
   <a href="shots/ONBOARD-FORGOT-11.png"><img src="shots/ONBOARD-FORGOT-11.png" alt="Ảnh lỗi ONBOARD-FORGOT-11" loading="lazy"></a>
-</details>
-
-<details class="case">
-  <summary><b>ONBOARD-FORGOT-03</b> – vào màn Đặt lại mật khẩu khi nhập đúng mã EmailOTP</summary>
-  <table>
-    <tr><th>Step</th><td>Step 1: Nhập đúng mã EmailOTP (tự động kiểm tra ngay khi nhập đủ 4 số, không có nút submit thủ công)</td></tr>
-    <tr><th>Expected</th><td>hiển thị &quot;Đặt lại mật khẩu&quot;</td></tr>
-    <tr><th>Actual</th><td>(không tìm thấy phần tử)</td></tr>
-    <tr><th>Locator</th><td><code>getByText('Đặt lại mật khẩu', { exact: true })</code></td></tr>
-  </table>
-  <a href="shots/ONBOARD-FORGOT-03.png"><img src="shots/ONBOARD-FORGOT-03.png" alt="Ảnh lỗi ONBOARD-FORGOT-03" loading="lazy"></a>
-</details>
-
-<details class="case">
-  <summary><b>ONBOARD-FORGOT-04</b> – màn hình xác thực tài khoản khi nhập sai mã EmailOTP</summary>
-  <table>
-    <tr><th>Step</th><td>Step 1: Nhập sai mã EmailOTP</td></tr>
-    <tr><th>Expected</th><td>hiển thị &quot;Mã xác thực không chính xác. Vui lòng thử lại.&quot;</td></tr>
-    <tr><th>Actual</th><td>(không tìm thấy phần tử)</td></tr>
-    <tr><th>Locator</th><td><code>getByText('Mã xác thực không chính xác. Vui lòng thử lại.', { exact: true })</code></td></tr>
-  </table>
-  <a href="shots/ONBOARD-FORGOT-04.png"><img src="shots/ONBOARD-FORGOT-04.png" alt="Ảnh lỗi ONBOARD-FORGOT-04" loading="lazy"></a>
 </details>
 
 <details class="case">
@@ -144,10 +100,10 @@ img{max-width:100%;border:1px solid var(--line);margin-top:8px}code{word-break:b
 <details class="case">
   <summary><b>ONBOARD-KIDS-02</b> – đăng nhập tài khoản chưa có gói và thiết lập PIN Galaxy Kids lần đầu</summary>
   <table>
-    <tr><th>Step</th><td>Step 8: Tại màn hình kết quả thanh toán, nhấn 'Thiết lập'</td></tr>
-    <tr><th>Expected</th><td>hiển thị &quot;Dành cho bố mẹ bé&quot;</td></tr>
-    <tr><th>Actual</th><td>(không tìm thấy phần tử)</td></tr>
-    <tr><th>Locator</th><td><code>getByText('Dành cho bố mẹ bé')</code></td></tr>
+    <tr><th>Step</th><td></td></tr>
+    <tr><th>Expected</th><td></td></tr>
+    <tr><th>Actual</th><td></td></tr>
+    
   </table>
   <a href="shots/ONBOARD-KIDS-02.png"><img src="shots/ONBOARD-KIDS-02.png" alt="Ảnh lỗi ONBOARD-KIDS-02" loading="lazy"></a>
 </details>
@@ -166,23 +122,12 @@ img{max-width:100%;border:1px solid var(--line);margin-top:8px}code{word-break:b
 <details class="case">
   <summary><b>ONBOARD-KIDS-03</b> – không cần thiết lập lại PIN khi đã từng thiết lập trước đó</summary>
   <table>
-    <tr><th>Step</th><td>Step 10: Tại Lobby, chọn profile Galaxy Kids</td></tr>
+    <tr><th>Step</th><td>Step 9: Tại Lobby, chọn profile Galaxy Kids</td></tr>
     <tr><th>Expected</th><td>/\/watch\/doraemon-stand-by-me/</td></tr>
     <tr><th>Actual</th><td>&quot;https://web-sand.glxplay.io/browse&quot;</td></tr>
     
   </table>
   <a href="shots/ONBOARD-KIDS-03.png"><img src="shots/ONBOARD-KIDS-03.png" alt="Ảnh lỗi ONBOARD-KIDS-03" loading="lazy"></a>
-</details>
-
-<details class="case">
-  <summary><b>ONBOARD-LOGIN-02</b> – đăng nhập thất bại khi nhập sai mật khẩu</summary>
-  <table>
-    <tr><th>Step</th><td>Step 5: Nhấn nút 'Đăng nhập'</td></tr>
-    <tr><th>Expected</th><td>hiển thị &quot;Thông tin đăng nhập chưa chính xác. Vui lòng thử lại.&quot;</td></tr>
-    <tr><th>Actual</th><td>hidden</td></tr>
-    <tr><th>Locator</th><td><code>getByText('Thông tin đăng nhập chưa chính xác. Vui lòng thử lại.', { exact: true })</code></td></tr>
-  </table>
-  <a href="shots/ONBOARD-LOGIN-02.png"><img src="shots/ONBOARD-LOGIN-02.png" alt="Ảnh lỗi ONBOARD-LOGIN-02" loading="lazy"></a>
 </details>
 
 <details class="case">
@@ -197,50 +142,6 @@ img{max-width:100%;border:1px solid var(--line);margin-top:8px}code{word-break:b
 </details>
 
 <details class="case">
-  <summary><b>ONBOARD-PAY-01</b> – đăng ký và thanh toán gói Cao Cấp thành công, tự vào phim đã tương tác</summary>
-  <table>
-    <tr><th>Step</th><td>Step 17: Tại màn hình kết quả thanh toán, nhấn 'Xem phim ngay'</td></tr>
-    <tr><th>Expected</th><td>/\/watch\/friendzone/</td></tr>
-    <tr><th>Actual</th><td>&quot;https://web-sand.glxplay.io/lobby&quot;</td></tr>
-    
-  </table>
-  <a href="shots/ONBOARD-PAY-01.png"><img src="shots/ONBOARD-PAY-01.png" alt="Ảnh lỗi ONBOARD-PAY-01" loading="lazy"></a>
-</details>
-
-<details class="case">
-  <summary><b>ONBOARD-PAY-05</b> – đăng ký và thanh toán gói Siêu Việt thành công, tự vào phim đã tương tác</summary>
-  <table>
-    <tr><th>Step</th><td>Step 17: Tại màn hình kết quả thanh toán, nhấn 'Xem phim ngay'</td></tr>
-    <tr><th>Expected</th><td>/\/watch\/friendzone/</td></tr>
-    <tr><th>Actual</th><td>&quot;https://web-sand.glxplay.io/lobby&quot;</td></tr>
-    
-  </table>
-  <a href="shots/ONBOARD-PAY-05.png"><img src="shots/ONBOARD-PAY-05.png" alt="Ảnh lỗi ONBOARD-PAY-05" loading="lazy"></a>
-</details>
-
-<details class="case">
-  <summary><b>ONBOARD-PAY-06</b> – đăng ký và thanh toán gói Galaxy VIP thành công, tự vào phim đã tương tác</summary>
-  <table>
-    <tr><th>Step</th><td>Step 17: Tại màn hình kết quả thanh toán, nhấn 'Xem phim ngay'</td></tr>
-    <tr><th>Expected</th><td>/\/watch\/friendzone/</td></tr>
-    <tr><th>Actual</th><td>&quot;https://web-sand.glxplay.io/lobby&quot;</td></tr>
-    
-  </table>
-  <a href="shots/ONBOARD-PAY-06.png"><img src="shots/ONBOARD-PAY-06.png" alt="Ảnh lỗi ONBOARD-PAY-06" loading="lazy"></a>
-</details>
-
-<details class="case">
-  <summary><b>ONBOARD-PAY-07</b> – đăng ký và thanh toán gói lẻ Crunchyroll thành công, tự vào phim đã tương tác</summary>
-  <table>
-    <tr><th>Step</th><td>Step 16: Tại màn hình kết quả thanh toán, nhấn 'Xem phim ngay'</td></tr>
-    <tr><th>Expected</th><td>/\/watch\/jujutsu-kaise/</td></tr>
-    <tr><th>Actual</th><td>&quot;https://web-sand.glxplay.io/browse&quot;</td></tr>
-    
-  </table>
-  <a href="shots/ONBOARD-PAY-07.png"><img src="shots/ONBOARD-PAY-07.png" alt="Ảnh lỗi ONBOARD-PAY-07" loading="lazy"></a>
-</details>
-
-<details class="case">
   <summary><b>ONBOARD-PAY-12</b> – bấm 'Để sau' ở màn thanh toán thành công thì không phát phim</summary>
   <table>
     <tr><th>Step</th><td>Step 17: Tại màn hình kết quả thanh toán, nhấn 'Để sau'</td></tr>
@@ -249,28 +150,6 @@ img{max-width:100%;border:1px solid var(--line);margin-top:8px}code{word-break:b
     
   </table>
   <a href="shots/ONBOARD-PAY-12.png"><img src="shots/ONBOARD-PAY-12.png" alt="Ảnh lỗi ONBOARD-PAY-12" loading="lazy"></a>
-</details>
-
-<details class="case">
-  <summary><b>ONBOARD-PAY-04</b> – đăng nhập tài khoản chưa có gói, thanh toán Cao Cấp rồi phát phim đã tương tác</summary>
-  <table>
-    <tr><th>Step</th><td>Step 10: Tại Lobby, chọn Profile Mọt phim</td></tr>
-    <tr><th>Expected</th><td>/\/watch\/friendzone/</td></tr>
-    <tr><th>Actual</th><td>&quot;https://web-sand.glxplay.io/browse&quot;</td></tr>
-    
-  </table>
-  <p><i>Không có ảnh.</i></p>
-</details>
-
-<details class="case">
-  <summary><b>ONBOARD-PAY-13</b> – bấm 'Để sau' dù profile đã chọn có quyền xem thì không phát phim</summary>
-  <table>
-    <tr><th>Step</th><td>Step 10: Tại Lobby, chọn Profile có quyền xem (Mọt phim)</td></tr>
-    <tr><th>Expected</th><td>/\/(browse|new-home)?(\?.*)?$/</td></tr>
-    <tr><th>Actual</th><td>&quot;https://web-sand.glxplay.io/lobby&quot;</td></tr>
-    
-  </table>
-  <a href="shots/ONBOARD-PAY-13.png"><img src="shots/ONBOARD-PAY-13.png" alt="Ảnh lỗi ONBOARD-PAY-13" loading="lazy"></a>
 </details>
 
 <details class="case">
@@ -322,7 +201,7 @@ img{max-width:100%;border:1px solid var(--line);margin-top:8px}code{word-break:b
   <table>
     <tr><th>Step</th><td>Step 1: Nhấn 'Để sau'</td></tr>
     <tr><th>Expected</th><td>/glxplay\.io\/(new-home)?$/</td></tr>
-    <tr><th>Actual</th><td>&quot;https://web-sand.glxplay.io/lobby&quot;</td></tr>
+    <tr><th>Actual</th><td>&quot;https://web-sand.glxplay.io/browse&quot;</td></tr>
     
   </table>
   <a href="shots/ONBOARD-REG-09.png"><img src="shots/ONBOARD-REG-09.png" alt="Ảnh lỗi ONBOARD-REG-09" loading="lazy"></a>
@@ -333,7 +212,7 @@ img{max-width:100%;border:1px solid var(--line);margin-top:8px}code{word-break:b
   <table>
     <tr><th>Step</th><td>Step 2: Nhấn 'Xác thực'</td></tr>
     <tr><th>Expected</th><td>/glxplay\.io\/(new-home)?$/</td></tr>
-    <tr><th>Actual</th><td>&quot;https://web-sand.glxplay.io/lobby&quot;</td></tr>
+    <tr><th>Actual</th><td>&quot;https://web-sand.glxplay.io/browse&quot;</td></tr>
     
   </table>
   <a href="shots/ONBOARD-REG-07.png"><img src="shots/ONBOARD-REG-07.png" alt="Ảnh lỗi ONBOARD-REG-07" loading="lazy"></a>
@@ -342,15 +221,15 @@ img{max-width:100%;border:1px solid var(--line);margin-top:8px}code{word-break:b
 <details class="case">
   <summary><b>ONBOARD-REG-11</b> – mã EmailOTP cũ bị vô hiệu hoá sau khi nhấn 'Gửi lại mã xác thực'</summary>
   <table>
-    <tr><th>Step</th><td>Step 2: Nhập mã OTP CŨ (đã nhận trước khi bấm Gửi lại)</td></tr>
-    <tr><th>Expected</th><td>hiển thị &quot;Mã xác thực không chính xác. Vui lòng thử lại.&quot;</td></tr>
-    <tr><th>Actual</th><td>(không tìm thấy phần tử)</td></tr>
-    <tr><th>Locator</th><td><code>getByText('Mã xác thực không chính xác. Vui lòng thử lại.')</code></td></tr>
+    <tr><th>Step</th><td></td></tr>
+    <tr><th>Expected</th><td></td></tr>
+    <tr><th>Actual</th><td></td></tr>
+    
   </table>
   <a href="shots/ONBOARD-REG-11.png"><img src="shots/ONBOARD-REG-11.png" alt="Ảnh lỗi ONBOARD-REG-11" loading="lazy"></a>
 </details>
-<h2>Case qua (22)</h2>
-<ul><li><b>ONBOARD-ENTRY-03</b> – nút 'Đăng ký/Đăng nhập để thanh toán' trong ngữ cảnh thanh toán dở dang</li><li><b>ONBOARD-FORGOT-02</b> – vào màn xác thực tài khoản (EmailOTP) khi tài khoản đã xác thực Email</li><li><b>ONBOARD-FORGOT-07</b> – hiển thị Popup hướng dẫn qua App (Web Desktop) khi tài khoản chưa xác thực Email</li><li><b>ONBOARD-FORGOT-05</b> – đặt mật khẩu mới thành công</li><li><b>ONBOARD-KIDS-04</b> – phát content khi đã có gói Galaxy Kids phù hợp</li><li><b>ONBOARD-KIDS-06</b> – không phát content khi chọn Profile không có quyền xem Galaxy Kids</li><li><b>ONBOARD-LOGIN-01</b> – đăng nhập thành công với SĐT và mật khẩu hợp lệ khi tài khoản đã có gói</li><li><b>ONBOARD-LOGIN-04</b> – nhập SĐT thuộc tài khoản đang chờ xoá tại màn hình Đăng nhập</li><li><b>ONBOARD-LOGIN-05</b> – đăng nhập thành công khi tài khoản chưa có gói subscription</li><li><b>ONBOARD-PAY-02</b> – đăng ký gói không có quyền xem phim đang tương tác thì không phát phim</li><li><b>ONBOARD-PAY-03</b> – chọn profile không có quyền xem thì không phát phim</li><li><b>ONBOARD-PAY-09</b> – đã có gói Cao Cấp nhưng mua gói Crunchyroll chưa sở hữu thì hiện xác nhận thanh toán</li><li><b>ONBOARD-PAY-10</b> – đăng ký và thanh toán khi chọn tập phim gắn tag 'Đăng ký gói'</li><li><b>ONBOARD-PAY-16</b> – tự động đăng nhập khi thoát luồng thanh toán sau khi tạo tài khoản mới</li><li><b>ONBOARD-REG-10</b> – đăng ký thành công trong ngữ cảnh thanh toán, bỏ qua Email và quay lại bước thanh toán</li><li><b>ONBOARD-FORGOT-08</b> – quên mật khẩu ở ngữ cảnh thanh toán dở dang rồi quay lại màn xác nhận thanh toán</li><li><b>ONBOARD-REG-01</b> – đăng ký tài khoản mới thành công với SĐT và mật khẩu hợp lệ</li><li><b>ONBOARD-REG-02</b> – lỗi khi mật khẩu và nhập lại mật khẩu không khớp</li><li><b>ONBOARD-REG-04</b> – nhập SĐT thuộc tài khoản đang chờ xoá tại màn hình Đăng ký</li><li><b>ONBOARD-REG-05</b> – gửi EmailOTP khi nhập email hợp lệ ở màn hình nhập Email</li><li><b>ONBOARD-REG-06</b> – chặn khi nhập Email đã được đăng ký bởi tài khoản khác</li><li><b>ONBOARD-REG-08</b> – màn hình EmailOTP khi nhập sai mã</li></ul>
+<h2>Case qua (33)</h2>
+<ul><li><b>ONBOARD-ENTRY-03</b> – nút 'Đăng ký/Đăng nhập để thanh toán' trong ngữ cảnh thanh toán dở dang</li><li><b>ONBOARD-ENTRY-04</b> – đăng ký từ Start Screen không thuộc ngữ cảnh thanh toán thì về thẳng Start Screen</li><li><b>ONBOARD-FORGOT-01</b> – chặn luồng Quên mật khẩu khi SĐT chưa có tài khoản</li><li><b>ONBOARD-FORGOT-02</b> – vào màn xác thực tài khoản (EmailOTP) khi tài khoản đã xác thực Email</li><li><b>ONBOARD-FORGOT-07</b> – hiển thị Popup hướng dẫn qua App (Web Desktop) khi tài khoản chưa xác thực Email</li><li><b>ONBOARD-FORGOT-03</b> – vào màn Đặt lại mật khẩu khi nhập đúng mã EmailOTP</li><li><b>ONBOARD-FORGOT-04</b> – màn hình xác thực tài khoản khi nhập sai mã EmailOTP</li><li><b>ONBOARD-FORGOT-05</b> – đặt mật khẩu mới thành công</li><li><b>ONBOARD-KIDS-04</b> – phát content khi đã có gói Galaxy Kids phù hợp</li><li><b>ONBOARD-KIDS-06</b> – không phát content khi chọn Profile không có quyền xem Galaxy Kids</li><li><b>ONBOARD-LOGIN-01</b> – đăng nhập thành công với SĐT và mật khẩu hợp lệ khi tài khoản đã có gói</li><li><b>ONBOARD-LOGIN-02</b> – đăng nhập thất bại khi nhập sai mật khẩu</li><li><b>ONBOARD-LOGIN-04</b> – nhập SĐT thuộc tài khoản đang chờ xoá tại màn hình Đăng nhập</li><li><b>ONBOARD-LOGIN-05</b> – đăng nhập thành công khi tài khoản chưa có gói subscription</li><li><b>ONBOARD-PAY-01</b> – đăng ký và thanh toán gói Cao Cấp thành công, tự vào phim đã tương tác</li><li><b>ONBOARD-PAY-02</b> – đăng ký gói không có quyền xem phim đang tương tác thì không phát phim</li><li><b>ONBOARD-PAY-05</b> – đăng ký và thanh toán gói Siêu Việt thành công, tự vào phim đã tương tác</li><li><b>ONBOARD-PAY-06</b> – đăng ký và thanh toán gói Galaxy VIP thành công, tự vào phim đã tương tác</li><li><b>ONBOARD-PAY-07</b> – đăng ký và thanh toán gói lẻ Crunchyroll thành công, tự vào phim đã tương tác</li><li><b>ONBOARD-PAY-03</b> – chọn profile không có quyền xem thì không phát phim</li><li><b>ONBOARD-PAY-04</b> – đăng nhập tài khoản chưa có gói, thanh toán Cao Cấp rồi phát phim đã tương tác</li><li><b>ONBOARD-PAY-13</b> – bấm 'Để sau' dù profile đã chọn có quyền xem thì không phát phim</li><li><b>ONBOARD-PAY-09</b> – đã có gói Cao Cấp nhưng mua gói Crunchyroll chưa sở hữu thì hiện xác nhận thanh toán</li><li><b>ONBOARD-PAY-10</b> – đăng ký và thanh toán khi chọn tập phim gắn tag 'Đăng ký gói'</li><li><b>ONBOARD-PAY-16</b> – tự động đăng nhập khi thoát luồng thanh toán sau khi tạo tài khoản mới</li><li><b>ONBOARD-REG-10</b> – đăng ký thành công trong ngữ cảnh thanh toán, bỏ qua Email và quay lại bước thanh toán</li><li><b>ONBOARD-FORGOT-08</b> – quên mật khẩu ở ngữ cảnh thanh toán dở dang rồi quay lại màn xác nhận thanh toán</li><li><b>ONBOARD-REG-01</b> – đăng ký tài khoản mới thành công với SĐT và mật khẩu hợp lệ</li><li><b>ONBOARD-REG-02</b> – lỗi khi mật khẩu và nhập lại mật khẩu không khớp</li><li><b>ONBOARD-REG-04</b> – nhập SĐT thuộc tài khoản đang chờ xoá tại màn hình Đăng ký</li><li><b>ONBOARD-REG-05</b> – gửi EmailOTP khi nhập email hợp lệ ở màn hình nhập Email</li><li><b>ONBOARD-REG-06</b> – chặn khi nhập Email đã được đăng ký bởi tài khoản khác</li><li><b>ONBOARD-REG-08</b> – màn hình EmailOTP khi nhập sai mã</li></ul>
 <h2>Chưa làm / bỏ qua</h2>
 <ul></ul>
 </body></html>
